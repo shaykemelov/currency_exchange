@@ -1,0 +1,63 @@
+databaseChangeLog:
+  - preConditions:
+      - runningAs:
+          username: project_migrations_user
+  - changeSet:
+      id: 1
+      author: shaykemelov
+      changes:
+        - createTable:
+            tableName: tbl_currency_rates
+            columns:
+              - column:
+                  name: source_currency
+                  type: char(3)
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: rate_date
+                  type: date
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: target_currency
+                  type: char(3)
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: exchange_rate
+                  type: numeric(20,6)
+  - changeSet:
+      id: 2
+      author: shaykemelov
+      changes:
+        - insert:
+            tableName: tbl_currency_rates
+            columns:
+              - column:
+                  name: source_currency
+                  value: "USD"
+              - column:
+                  name: rate_date
+                  value: "2024-08-02"
+              - column:
+                  name: target_currency
+                  value: "KZT"
+              - column:
+                  name: exchange_rate
+                  value: "474.35"
+        - insert:
+            tableName: tbl_currency_rates
+            columns:
+              - column:
+                  name: source_currency
+                  value: "KZT"
+              - column:
+                  name: rate_date
+                  value: "2024-08-02"
+              - column:
+                  name: target_currency
+                  value: "USD"
+              - column:
+                  name: exchange_rate
+                  value: "0.0021"

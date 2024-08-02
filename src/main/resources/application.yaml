@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: currency_exchange
+  threads:
+    virtual:
+      enabled: true
+  datasource:
+    username: project_app_user
+    password: project_app_password
+    url: jdbc:postgresql://localhost:5432/project_db
+  jpa:
+    open-in-view: false
+  liquibase:
+    password: project_migrations_password
+    user: project_migrations_user
+
+management:
+  server:
+    port: 9090
+
+logbook:
+  format:
+    style: json
