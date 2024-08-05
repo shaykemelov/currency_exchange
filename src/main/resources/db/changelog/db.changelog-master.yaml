@@ -39,7 +39,7 @@ databaseChangeLog:
                   value: "USD"
               - column:
                   name: rate_date
-                  value: "2024-08-02"
+                  value: "now()"
               - column:
                   name: target_currency
                   value: "KZT"
@@ -54,7 +54,7 @@ databaseChangeLog:
                   value: "KZT"
               - column:
                   name: rate_date
-                  value: "2024-08-02"
+                  value: "now()"
               - column:
                   name: target_currency
                   value: "USD"
